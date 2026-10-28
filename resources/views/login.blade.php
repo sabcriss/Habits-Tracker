@@ -11,8 +11,7 @@
             <p>
                 Insira seus dados para acessar.
             </p>
-            <form action="/login" method="POST" class="max-w-md mx-auto mt-8 flex flex-col">
-                @csrf
+<form action="{{ route('login.authenticate') }}" method="POST" class="max-w-md mx-auto mt-8 flex flex-col">                @csrf
 
                 @error('email')
                 <p class="text-red-500 text-sm mt-2">
@@ -53,6 +52,9 @@
                     class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded mx-auto block">
                     Login
                 </button>
+                <p class="text-center text-gray-600 mt-4">
+                    Não tem uma conta? <a href="{{ route('site.register') }}" class="underline hover:opacity-75 transition" >Cadastre-se</a>
+                </p>
             </form>
 
         </section>
